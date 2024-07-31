@@ -60,6 +60,8 @@ button {
 }
 
 .nav__label {
+    position: absolute;
+    right: 0;
     width: 36px;
     height: 36px;
     background-image: var(--nav-icon-background);
