@@ -39,12 +39,6 @@ button {
     padding: 0 1rem;
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-    
-
-
-    
-
-
 
     --transform-list-menu: translate(-100%);
     --nav-icon-background: url(./Assets/menu-open.svg);
