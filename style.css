@@ -47,7 +47,7 @@ button {
 .nav:has(.nav__checkbox:checked) {
     --nav-icon-background: url(./Assets/menu-close.svg);
     --transform-list-menu: translate(0%);
-
+    
 }
 
 .nav__checkbox {
@@ -60,10 +60,8 @@ button {
 }
 
 .nav__label {
-    position: absolute;
-    right: 0;
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     background-image: var(--nav-icon-background);
     background-size: cover;
     cursor: pointer;
