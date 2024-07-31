@@ -11,7 +11,7 @@
     --second-color: #191A23;
     --gray-color: #F3F3F3;
 
-    --padding-container: 5em 0;
+    --padding-container: 2em 0;
 }
 
 body,
@@ -24,6 +24,7 @@ button {
 .container {
     width: 90%;
     margin: 0 auto;
+    margin-top: 5rem;
 }
 
 .nav {
@@ -47,7 +48,7 @@ button {
 .nav:has(.nav__checkbox:checked) {
     --nav-icon-background: url(./Assets/menu-close.svg);
     --transform-list-menu: translate(0%);
-    
+
 }
 
 .nav__checkbox {
@@ -132,6 +133,7 @@ button {
     line-height: 2;
 }
 
+
 .hero__cta {
     background-color: var(--second-color);
     color: white;
@@ -146,6 +148,7 @@ button {
 }
 
 @media (width >=768px) {
+
     .hero__main {
         padding: var(--padding-container);
         gap: 1rem;
@@ -176,16 +179,14 @@ button {
         grid-area: img;
     }
 
-    .cta__figure {
-        display: block;
-    }
 
     .cta__content {
-        grid-template-columns: 45% 45%;
+        grid-template-columns: 1fr 1fr;
         justify-content: space-between;
         align-items: center;
     }
 }
+
 
 @media(width>=900px) {
     .nav {
@@ -203,6 +204,10 @@ button {
         gap: 1rem;
         align-items: center;
         height: fit-content;
+    }
+
+    .cta__links {
+        place-self: start;
     }
 }
 
@@ -227,11 +232,11 @@ button {
 }
 
 .services__container {
-    margin-top: 3rem;
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
+
 
 .services__article {
     width: min(95%, 450px);
@@ -299,6 +304,10 @@ button {
     margin: 0 auto;
     display: grid;
     gap: 2rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid black;
+    border-radius: 0px 0px 10px 10px;
+    border-bottom-width: 2px;
 }
 
 .cta__texts {
@@ -308,18 +317,62 @@ button {
 
 .cta__links {
     background-color: var(--second-color);
-    padding: 1.3rem 0;
+    padding: 1.3rem 2rem;
     border-radius: 10px;
     color: white;
     text-decoration: none;
     text-align: center;
 }
 
-.cta__figure {
-    display: none;
+.cta__links:hover {
+    color: var(--primary-color);
 }
 
 .cta__img {
     width: 100%;
+}
 
+.faq {
+    padding: 80px 0;
+}
+
+.faq__container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.faq__item {
+    background-color: var(--gray-color);
+    padding: 1.5rem;
+    border-radius: 30px;
+    border: 1px solid black;
+    border-bottom-width: 4px;
+
+    --icon-question-url: url("./Assets/close-question.svg");
+}
+
+.faq__question {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq__title {
+    font-size: 1.2rem;
+    width: fit-content;
+}
+
+.faq__question::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-image: var(--icon-question-url);
+    transition: background-image.3s;
+}
+
+.faq__item[open] {
+    background-color: var(--primary-color);
+    --icon-question-url: url("./Assets/open-question.svg");
 }
